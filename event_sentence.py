@@ -42,37 +42,37 @@ event_sentence3=event_sentence2.drop('events1', axis=1).join(event_sentence2['ev
 # event_sentence2=copy.deepcopy(event_sentence1)   ##工作数据集
 #
 #
-global temp
-temp=pd.DataFrame()
-y=2
+# global temp
+# temp=pd.DataFrame()
+# y=2
 
 
-def clean_events(x):
-    global event_sentence
-    global temp
-    global y
-    # temp = event_sentence2
-    filter_words=','
-    if filter_words not in x['events1'].tolist():
-         return None
-    if filter_words in x['events1'].tolist():
+# def clean_events(x):
+#     global event_sentence
+#     global temp
+#     global y
+#     # temp = event_sentence2
+#     filter_words=','
+#     if filter_words not in x['events1'].tolist():
+#          return None
+#     if filter_words in x['events1'].tolist():
 
-        events=str.split(x['events1'].tolist()[0], filter_words)
-        for event in events:
-            df=x
-            y=3
-            df['events1']=event
-            # global temp
-            # temp=event_sentence2.append(df)
-            event_sentence2=event_sentence2.append(df)
-         # return event_sentence2
-        return None
+#         events=str.split(x['events1'].tolist()[0], filter_words)
+#         for event in events:
+#             df=x
+#             y=3
+#             df['events1']=event
+#             # global temp
+#             # temp=event_sentence2.append(df)
+#             event_sentence2=event_sentence2.append(df)
+#          # return event_sentence2
+#         return None
          # return df
 
 # for i in range(0,6965):
 #     clean_events(event_sentence2[i:i+1])
 #
 #
-clean_events(event_sentence2[6962:6963])
+# clean_events(event_sentence2[6962:6963])
 #
 # event_sentence2[6962:6963].apply(lambda x:clean_events(x),axis=1)
